@@ -6,4 +6,6 @@
 
 .secondaryContainer { background-color: #003366; height: 500px; color: white; }
 
+.secondaryContainer p { font-family: sans-serif; font-size: 24px; width: 50%; letter-spacing: 1px; }
+
 /*# sourceMappingURL=style.css.map */
