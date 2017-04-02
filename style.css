@@ -1,0 +1,9 @@
+.primaryContainer { background-color: #333333; height: 500px; color: white; }
+
+.primaryContainer ul { list-style: none outside none; }
+
+.primaryContainer ul li { font: 21px serif; color: #a33fc8; letter-spacing: 1px; }
+
+.secondaryContainer { background-color: #003366; height: 500px; color: white; }
+
+/*# sourceMappingURL=style.css.map */
