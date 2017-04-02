@@ -8,25 +8,46 @@
 <body>
     <h1>Home of all that is testing</h1>
     <div class="primaryContainer">
-        
+        <h3>Enter a film name:</h3>
+        <input type="text" id="userChosenEntry">
+        <input id='submitted' type="submit" value="Go!">
         <ul>
             
         </ul>
         
     </div>
-    <div class="secondaryContainer"></div>
+    <div class="secondaryContainer">
+        
+        <p></p>
+        <img src="" alt="" />
+    </div>
 </body>
 <script
   src="https://code.jquery.com/jquery-2.2.4.min.js"
   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
   crossorigin="anonymous"></script>
-<script>
+<script>    
     $(document).ready(function(){
-    $.getJSON('content.json',function(data){
+        
+        $('#submitted').click(function(){
+            var chosenTitle = $('#userChosenEntry').val();
+            console.log(chosenTitle)
+    $.ajax('http://netflixroulette.net/api/api.php?title=' + chosenTitle ,{
+        success: function(data){
+     console.log(data); 
+           
+                $('.secondaryContainer p').html(data.summary)
+                $('.secondaryContainer img').attr('src', data.poster)
+            $('.secondaryContainer img').attr('alt',data.show_title)
+         
+        }
+        })
+    });
+    /*$.getJSON('content.json',function(data){
         $.each(data,function(key,value){
         $('.primaryContainer ul').append('<li>' + this.name + '</li>');
         })
-    }); 
+    });*/ 
     });
     </script>
 </html>
